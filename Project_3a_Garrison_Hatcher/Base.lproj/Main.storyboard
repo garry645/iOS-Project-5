@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,78 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project_3a_Garrison_Hatcher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tuP-Uj-lAr">
+                                <rect key="frame" x="0.0" y="119" width="414" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oor-SC-D99">
+                                <rect key="frame" x="187" y="520" width="40" height="30"/>
+                                <state key="normal" title="Insert"/>
+                                <connections>
+                                    <action selector="insertNewElement:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vph-U2-ft3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvS-Pd-AyR">
+                                <rect key="frame" x="179.5" y="570" width="55" height="30"/>
+                                <state key="normal" title="Replace"/>
+                                <connections>
+                                    <action selector="replaceElement:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YOn-kb-f5U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5v-sR-zrG">
+                                <rect key="frame" x="185" y="385" width="44" height="30"/>
+                                <state key="normal" title="Select"/>
+                                <connections>
+                                    <action selector="selectPickerData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gbZ-AM-0AC"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Item: " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="loU-Np-WeX">
+                                <rect key="frame" x="132" y="465" width="150" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="EYP-TS-8Jr"/>
+                                    <constraint firstAttribute="height" constant="35" id="ktK-hD-1Wa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqo-t4-NNS">
+                                <rect key="frame" x="184.5" y="620" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteElement:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pu7-qM-kjC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="loU-Np-WeX" firstAttribute="top" secondItem="b5v-sR-zrG" secondAttribute="bottom" constant="50" id="2xH-vT-Xis"/>
+                            <constraint firstItem="b5v-sR-zrG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5RY-Nf-db3"/>
+                            <constraint firstItem="oor-SC-D99" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dzh-o8-8vp"/>
+                            <constraint firstItem="Dqo-t4-NNS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N8E-eG-KJk"/>
+                            <constraint firstItem="Dqo-t4-NNS" firstAttribute="top" secondItem="uvS-Pd-AyR" secondAttribute="bottom" constant="20" id="Npe-ed-MFf"/>
+                            <constraint firstItem="tuP-Uj-lAr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="S5X-MD-EoC"/>
+                            <constraint firstItem="uvS-Pd-AyR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VZY-cN-Uxg"/>
+                            <constraint firstItem="uvS-Pd-AyR" firstAttribute="top" secondItem="oor-SC-D99" secondAttribute="bottom" constant="20" id="XVU-Ut-KDi"/>
+                            <constraint firstItem="tuP-Uj-lAr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bPh-Xp-gRa"/>
+                            <constraint firstItem="loU-Np-WeX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k4h-sb-wPz"/>
+                            <constraint firstItem="b5v-sR-zrG" firstAttribute="top" secondItem="tuP-Uj-lAr" secondAttribute="bottom" constant="50" id="q4L-EN-qje"/>
+                            <constraint firstItem="oor-SC-D99" firstAttribute="top" secondItem="loU-Np-WeX" secondAttribute="bottom" constant="20" id="uSb-k8-OE3"/>
+                            <constraint firstItem="tuP-Uj-lAr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yhH-8t-GRg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="newItemTF" destination="loU-Np-WeX" id="u6C-cN-iHb"/>
+                        <outlet property="picker" destination="tuP-Uj-lAr" id="Nrb-OO-Usl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="116.51785714285714"/>
         </scene>
     </scenes>
 </document>
